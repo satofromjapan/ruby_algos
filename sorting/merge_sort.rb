@@ -5,9 +5,8 @@ def merge(l, r, a)
   j = 0
   k = 0
   while (i < l_len) and (j < r_len) do
-    if l[i] < r[j]
+    if l[i] <= r[j]
       a[k] = l[i]
-      k += 1
       i+=1
     else
       a[k] = r[j]
@@ -42,13 +41,14 @@ def merge_sort(arr)
   (mid_index...n).each do |j|
     right << arr[j]
   end
+  merge_sort(left)
+  merge_sort(right)
 
-
-  return merge(merge_sort(left), merge_sort(right), arr)
+  return merge(left, right, arr)
 end
 
 
 
-a = [2,4,1,6,8,5,3,7]
+a = [2,-4,1,6,-8,5,3,7]
 
 puts merge_sort(a)
