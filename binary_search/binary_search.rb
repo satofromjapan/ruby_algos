@@ -44,4 +44,4 @@ def recurrsive_binary_search(arr, s, e, v)
   end
 end
 
-puts recurrsive_binary_search(a, 0, a.length-1, 60)
+puts recurrsive_binary_search(a, 0, a.length-1, val)

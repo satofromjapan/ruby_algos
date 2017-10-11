@@ -1,7 +1,7 @@
 # Use binary serach to find the count of an element in a sorted array of integers
 
 a = [1,1,3,3,5,5,5,5,5,9,9,11]
-element = 5
+element = 2
 
 # iterative method
 
@@ -61,8 +61,12 @@ end
 def find_count_binary(a, element)
   first = find_first(a, element)
   last = find_last(a, element)
-  return (last - first + 1)
+  if first == -1
+    return "Not found"
+  else
+    return (last - first + 1)
+  end
 end
 
 puts "Binary search solution"
-puts element.to_s + " was found in the array " + (find_count_binary(a, element).to_s) + " times."
+puts find_count_binary(a, element)
